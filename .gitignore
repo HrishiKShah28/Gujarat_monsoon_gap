@@ -1,0 +1,19 @@
+# Environments
+.venv/
+env/
+venv/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.ipynb_checkpoints/
+
+# OS specific
+.DS_Store
+Thumbs.db
+
+# Large raw dumps if needed (we will track processed analytical files < 10MB)
+*.tmp
+*.bak
