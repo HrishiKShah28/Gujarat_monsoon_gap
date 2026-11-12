@@ -160,3 +160,4 @@ When Avaloka's Coder and Validator agents produce executable code, Tier 2 (Antig
 2. **Missing Station Handling**: Verify that wells missing May or November readings in a specific year are dropped via inner join or pair-masking rather than zero-filled (which would falsely report $\Delta h = \pm h$).
 3. **No Target Leakage in Feature Pipelines**: Confirm that when calculating risk of pre-monsoon stress for year $t+1$, no post-monsoon observations from year $t+1$ or future rainfall totals are included.
 4. **Outlier Auditing**: Confirm whether extreme depths ($> 150\text{ mbgl}$) in Mehsana/Patan reflect genuine deep alluvial tube-wells (CGWB exploratory wells) rather than measurement entry errors.
+

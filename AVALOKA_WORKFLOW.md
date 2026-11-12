@@ -127,3 +127,4 @@ Follow this step-by-step workflow in the Avaloka web interface ([avaloka.ai](htt
 2. Download the high-resolution charts from the Auto Insights pane.
 3. Copy the Python execution snippets from the Code Drawer into our documentation suite.
 4. Record the 2-minute walkthrough showing these exact steps in action.
+

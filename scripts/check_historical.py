@@ -25,3 +25,4 @@ try:
     print(df_h.head(2).T)
 except Exception as e:
     print(f"Error: {e}")
+

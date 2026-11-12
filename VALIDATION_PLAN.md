@@ -96,3 +96,4 @@ During our interaction with Avaloka, we proactively introduce adversarial challe
 3. **Adversarial Challenge 3: Extreme Value Stress-Testing**:
    - *Test*: Ask Avaloka to evaluate the impact of clipping extreme values ($> 100\text{ mbgl}$) vs preserving them.
    - *Expectation*: Does Avaloka distinguish genuine hydrogeological phenomena from measurement noise?
+

@@ -77,3 +77,4 @@ Rather than building an isolated analysis in Jupyter notebooks, we leverage **Av
 2. **2-Minute Screen Demonstration**: Crisp, focused walkthrough showing the Gujarat groundwater problem, official NWIC dataset, Avaloka code execution, challenging an AI finding, and real-world policy takeaways.
 3. **Comprehensive Evidence-Backed Final Report**: A 12-section hydrogeological report featuring verified statistics, maps, district comparisons, and policy recommendations.
 4. **Reproducible GitHub Repository**: Complete open-source code, data audits, and validation scripts committed to `https://github.com/HrishiKShah28/Gujarat_monsoon_gap`.
+

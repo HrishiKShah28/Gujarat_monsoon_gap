@@ -29,3 +29,4 @@ try:
     print(df_sample.head(3).T)
 except Exception as e:
     print(f"Error fetching NWIC data: {e}", file=sys.stderr)
+

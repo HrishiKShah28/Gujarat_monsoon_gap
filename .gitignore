@@ -17,3 +17,4 @@ Thumbs.db
 # Large raw dumps if needed (we will track processed analytical files < 10MB)
 *.tmp
 *.bak
+

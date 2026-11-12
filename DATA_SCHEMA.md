@@ -79,3 +79,4 @@ When training models with Avaloka's Model Training Agent (MTA) to forecast **nex
 | • Historical monsoon recharge delta ($\Delta h_t$) | • Any measurement taken after May 1 of year $t+1$ |
 | • Station latitude, longitude, elevation, and hydro-zone | • Future station re-classifications or retrospective edits |
 | • Historical seasonal precipitation anomaly of year $t$ | - |
+

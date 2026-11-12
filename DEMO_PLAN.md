@@ -64,3 +64,4 @@
 - [ ] **Audio Clarity**: No background noise; vocal inflection on key phrases: *"Monsoon Recharge Gap"*, *"Planner and Coder agents"*, *"Code Drawer"*, *"six months lead time"*.
 - [ ] **Cursor Movement**: Smooth, deliberate cursor pointing—no erratic mouse shaking.
 - [ ] **Visual Sync**: Screen transitions precisely match narration milestones at 0:15, 0:35, 0:55, 1:15, and 1:45.
+

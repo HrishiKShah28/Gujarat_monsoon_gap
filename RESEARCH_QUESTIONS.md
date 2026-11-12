@@ -109,3 +109,4 @@ If water planners know in **December** which talukas will face water table colla
 
 ### Avaloka MTA Prompt Formulation:
 > *"We want to build a machine learning model to predict next summer's pre-monsoon groundwater depth (`pre_monsoon_depth_next_year`). Use ONLY features available in November: post_monsoon_depth, latitude, longitude, district, and historical average recharge. Enforce strict chronological splitting (training on earlier years, testing on the most recent year). Compare against a seasonal historical baseline and evaluate MAE, RMSE, and R²."*
+

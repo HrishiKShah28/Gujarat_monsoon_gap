@@ -98,3 +98,4 @@ To ensure full transparency and auditability, every interaction follows a docume
 [Peer Audit]         Antigravity audits code for hygiene; if anomaly found, generates 
                      adversarial follow-up prompt to challenge Avaloka's finding.
 ```
+

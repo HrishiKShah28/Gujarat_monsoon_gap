@@ -1,0 +1,59 @@
+{
+  "total_analytical_observations": 52919,
+  "paired_observations": 22820,
+  "recharge_deficit_station_years": 410,
+  "recharge_deficit_percentage": 1.7966695880806312,
+  "statewide_median_recharge_meters": 3.2,
+  "statewide_mean_recharge_meters": 4.344704206836108,
+  "simpsons_paradox": {
+    "basalt_may_median": 12.8,
+    "basalt_recharge_median": 4.65,
+    "basalt_rabi_drawdown_median": 1.5900000000000003,
+    "basalt_recharge_deficit_pct": 1.2891128559709364,
+    "alluvial_may_median": 13.5,
+    "alluvial_recharge_median": 3.25,
+    "alluvial_rabi_drawdown_median": 1.2000000000000006,
+    "alluvial_recharge_deficit_pct": 3.4220532319391634
+  },
+  "decadal_trends": {
+    "eligible_stations_ge_15yr": 802,
+    "statewide_median_sen_slope_m_yr": -0.008972537878787979
+  },
+  "spatial_autocorrelation": {
+    "global_morans_i": 0.1603866989155543
+  },
+  "machine_learning": {
+    "train_size": 21062,
+    "test_size": 524,
+    "baseline_persistence": {
+      "rmse": 7.560323747118285,
+      "mae": 2.4400763212404577,
+      "r2": 0.9165888708850474
+    },
+    "random_forest": {
+      "rmse": 16.619500559425934,
+      "mae": 5.0984077460323824,
+      "r2": 0.59693122943482,
+      "directional_accuracy_pct": 55.72519083969466,
+      "roc_auc": 0.967495847261243,
+      "pr_auc": 0.9045439141041505,
+      "precision": 0.8909090909090909,
+      "recall": 0.8099173553719008,
+      "f1": 0.8484848484848485
+    },
+    "gradient_boosting": {
+      "rmse": 20.475376181718868,
+      "mae": 6.077756977060973,
+      "r2": 0.3882034933414402
+    },
+    "feature_importances": {
+      "depth_may": 0.9036633980737061,
+      "depth_nov": 0.04458709248174338,
+      "trailing_depth_mean_3yr": 0.015242947901338127,
+      "latitude": 0.014983785161292148,
+      "longitude": 0.013002682165044233,
+      "recharge_delta": 0.008491624791975,
+      "recharge_gap_flag": 2.8469424901004763e-05
+    }
+  }
+}
