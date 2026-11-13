@@ -1,0 +1,132 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Technical report — Predict &#39;depth_may_next&#39;</title>
+<style>
+body{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;color:#1b1f24;background:#f6f8fa}
+.wrap{max-width:960px;margin:0 auto;padding:32px}
+h1{font-size:28px;margin:0 0 4px} h2{font-size:20px;margin:28px 0 8px;border-bottom:1px solid #e1e4e8;padding-bottom:6px}
+.sub{color:#57606a;margin:0 0 20px}
+.card{background:#fff;border:1px solid #e1e4e8;border-radius:8px;padding:16px 20px;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:14px} th,td{text-align:left;padding:7px 10px;border-bottom:1px solid #eaecef}
+th{background:#f6f8fa} .kpi{display:inline-block;min-width:150px;margin:6px 18px 6px 0}
+.kpi .v{font-size:22px;font-weight:600} .kpi .l{color:#57606a;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.pass{color:#1a7f37;font-weight:600}.warn{color:#9a6700;font-weight:600}.fail{color:#cf222e;font-weight:600}
+.badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:12px;background:#ddf4ff;color:#0969da}
+.muted{color:#57606a;font-size:13px} code{background:#eff1f3;padding:1px 5px;border-radius:4px}
+</style></head><body><div class="wrap">
+<h1>Technical report</h1>
+<p class="sub">Predict &#39;depth_may_next&#39; · mission <code>d792d994feea</code></p>
+
+<h2>Dataset</h2>
+<div class="card"><p><code>C:\Users\Hrishi\Desktop\projects\Gujarat Monsoon gap\data\processed\gujarat_groundwater_model_features.csv</code> — 21586 rows × 19 cols
+(csv). Quality score <strong>76/100</strong>.
+SHA-256 <span class="muted">f9a87f053e69f3a5…</span></p></div>
+
+<h2>Schema &amp; distributions</h2>
+<div class="card"><table><tr><th>Column</th><th>Role</th><th>Dtype</th><th>Missing</th><th>Unique</th><th>Summary</th></tr>
+<tr><td>station_code</td><td>categorical</td><td>object</td>
+<td>0.0%</td><td>1385</td>
+<td class="muted">top: NAVSARI_BLS-41(28), MAHISAGAR_PM-081(28), JUNAGADH_AMR-007(28)</td></tr><tr><td>station_name</td><td>categorical</td><td>object</td>
+<td>0.0%</td><td>1382</td>
+<td class="muted">top: BLS-41(28), PM-081(28), AMR-007(28)</td></tr><tr><td>district</td><td>categorical</td><td>object</td>
+<td>0.0%</td><td>33</td>
+<td class="muted">top: Junagadh(2516), Amreli(1478), Jamnagar(1386)</td></tr><tr><td>hydro_zone</td><td>categorical</td><td>object</td>
+<td>0.0%</td><td>4</td>
+<td class="muted">top: Saurashtra Hard-Rock Basalt(9230), South &amp; Central Gujarat Plain(8980), North Gujarat Alluvium(2216)</td></tr><tr><td>latitude</td><td>numeric</td><td>float64</td>
+<td>0.0%</td><td>1245</td>
+<td class="muted">μ=22.1, σ=1.01,
+[20.2, 24.7], outliers=0
+</td></tr><tr><td>longitude</td><td>numeric</td><td>float64</td>
+<td>0.0%</td><td>1267</td>
+<td class="muted">μ=72, σ=1.47,
+[68.5, 74.4], outliers=0
+</td></tr><tr><td>year</td><td>numeric</td><td>int64</td>
+<td>0.0%</td><td>30</td>
+<td class="muted">μ=2.01e+03, σ=8.23,
+[1.99e+03, 2.02e+03], outliers=0
+</td></tr><tr><td>depth_may</td><td>numeric</td><td>float64</td>
+<td>0.0%</td><td>1302</td>
+<td class="muted">μ=11.3, σ=7.39,
+[0, 196], outliers=388
+</td></tr><tr><td>depth_nov</td><td>numeric</td><td>float64</td>
+<td>0.0%</td><td>1236</td>
+<td class="muted">μ=7.05, σ=6.7,
+[0.05, 191], outliers=929
+</td></tr><tr><td>recharge_delta</td><td>numeric</td><td>float64</td>
+<td>0.0%</td><td>2182</td>
+<td class="muted">μ=4.24, σ=4.06,
+[-73.4, 34.3], outliers=1033
+</td></tr><tr><td>recharge_gap_flag</td><td>numeric</td><td>int64</td>
+<td>0.0%</td><td>2</td>
+<td class="muted">μ=0.0174, σ=0.131,
+[0, 1], outliers=375
+</td></tr><tr><td>relative_recovery_ratio</td><td>numeric</td><td>float64</td>
+<td>0.0%</td><td>11263</td>
+<td class="muted">μ=0.387, σ=0.275,
+[-12.7, 0.995], outliers=34
+</td></tr><tr><td>depth_jan_next</td><td>numeric</td><td>float64</td>
+<td>96.6%</td><td>366</td>
+<td class="muted">μ=12.4, σ=19,
+[0.35, 199], outliers=20
+</td></tr><tr><td>rabi_drawdown</td><td>numeric</td><td>float64</td>
+<td>96.6%</td><td>396</td>
+<td class="muted">μ=1.18, σ=3.67,
+[-66.3, 16.1], outliers=74
+</td></tr><tr><td>depth_may_next</td><td>numeric</td><td>float64</td>
+<td>0.0%</td><td>1357</td>
+<td class="muted">μ=11.3, σ=7.45,
+[0, 197], outliers=415
+</td></tr><tr><td>stress_alarm_next</td><td>numeric</td><td>float64</td>
+<td>0.0%</td><td>2</td>
+<td class="muted">μ=0.248, σ=0.432,
+[0, 1], outliers=5357
+</td></tr><tr><td>trailing_depth_mean_3yr</td><td>numeric</td><td>float64</td>
+<td>0.0%</td><td>4269</td>
+<td class="muted">μ=7.11, σ=6.45,
+[0.1, 191], outliers=901
+</td></tr><tr><td>baseline_persistence_pred</td><td>numeric</td><td>float64</td>
+<td>0.0%</td><td>1302</td>
+<td class="muted">μ=11.3, σ=7.39,
+[0, 196], outliers=388
+</td></tr><tr><td>baseline_persistence_abs_err</td><td>numeric</td><td>float64</td>
+<td>0.0%</td><td>1527</td>
+<td class="muted">μ=1.71, σ=2.4,
+[0, 115], outliers=1585
+</td></tr></table></div>
+
+<h2>Strongest correlations</h2>
+<div class="card"><table><tr><th>A</th><th>B</th><th>|corr|</th></tr>
+<tr><td>depth_may</td><td>baseline_persistence_pred</td><td>1.0</td></tr><tr><td>depth_may</td><td>depth_jan_next</td><td>0.9817</td></tr><tr><td>depth_jan_next</td><td>baseline_persistence_pred</td><td>0.9817</td></tr><tr><td>depth_nov</td><td>depth_jan_next</td><td>0.9813</td></tr><tr><td>depth_jan_next</td><td>trailing_depth_mean_3yr</td><td>0.9752</td></tr><tr><td>depth_jan_next</td><td>depth_may_next</td><td>0.9446</td></tr><tr><td>depth_may</td><td>depth_may_next</td><td>0.9212</td></tr><tr><td>depth_may_next</td><td>baseline_persistence_pred</td><td>0.9212</td></tr><tr><td>depth_nov</td><td>trailing_depth_mean_3yr</td><td>0.9025</td></tr></table></div>
+<h2>Data quality issues</h2>
+<div class="card"><table><tr><th>Severity</th><th>Column</th><th>Issue</th></tr>
+<tr><td class="fail">high</td>
+<td>depth_jan_next</td><td>96.6% missing.</td></tr><tr><td class="fail">high</td>
+<td>rabi_drawdown</td><td>96.6% missing.</td></tr></table>
+</div>
+
+<h2>Plan</h2>
+<div class="card"><p>Task: <strong>regression</strong> — Numeric target with 1357 distinct values.</p>
+<p>Split: <code>random_train_test</code> — Random holdout is valid for i.i.d. tabular regression.</p>
+<p>Candidate algorithms: linear_regression, random_forest, gradient_boosting</p>
+<p class="muted">Unconstrained budget; all candidate algorithms considered.</p>
+<p><strong>Hypotheses:</strong></p><ul><li>&#39;depth_may&#39; and &#39;baseline_persistence_pred&#39; move together (|corr|=1.0); consider redundancy or a shared driver.</li><li>&#39;depth_may&#39; and &#39;depth_jan_next&#39; move together (|corr|=0.9817); consider redundancy or a shared driver.</li><li>&#39;depth_jan_next&#39; and &#39;baseline_persistence_pred&#39; move together (|corr|=0.9817); consider redundancy or a shared driver.</li><li>Identify which features most influence &#39;depth_may_next&#39; and quantify the effect.</li></ul></div>
+
+
+<h2>Model results</h2>
+<div class="card"><table><tr><th>Candidate</th><th>r2</th><th>CV mean ± std</th><th>Train s</th><th>Latency ms</th></tr>
+<tr style="font-weight:600;background:#f0fff4">
+<td>random_forest</td><td>0.9665</td>
+<td>0.963 ± 0.006</td>
+<td>47.07</td><td>30.56</td></tr><tr >
+<td>gradient_boosting</td><td>0.9477</td>
+<td>0.944 ± 0.006</td>
+<td>4.96</td><td>5.97</td></tr><tr >
+<td>linear_regression</td><td>0.9109</td>
+<td>0.887 ± 0.041</td>
+<td>0.43</td><td>6.24</td></tr></table><p>Selected: <strong>random_forest</strong>.</p></div>
+<h2>Validation</h2>
+<div class="card"><p>Verdict <span class="pass">PASS</span>,
+max safe deployment level 4.</p>
+<table><tr><th>Check</th><th>Status</th><th>Detail</th></tr>
+<tr><td>data_sufficiency</td><td class="pass">pass</td><td class="muted">~50 rows/feature suggests &gt;= 900 rows for 18 features.</td></tr><tr><td>target_leakage</td><td class="pass">pass</td><td class="muted">No feature is near-perfectly predictive of the target.</td></tr><tr><td>split_validity</td><td class="pass">pass</td><td class="muted">Used &#39;random_train_test&#39; (17268 train / 4318 test rows).</td></tr><tr><td>beats_baseline</td><td class="pass">pass</td><td class="muted">CV r2 0.963 beats the mean baseline (-0.000) by more than fold noise.</td></tr><tr><td>stability</td><td class="pass">pass</td><td class="muted">CV r2 = 0.963 +/- 0.006 (stable).</td></tr><tr><td>overfitting</td><td class="pass">pass</td><td class="muted">Holdout and CV scores are consistent.</td></tr></table></div>
+
+<p class="muted">Reproduce with <code>analysis.py</code> / <code>analysis.ipynb</code>; see <code>lineage.json</code> and <code>environment.lock</code>.</p>
+</div></body></html>

@@ -291,3 +291,4 @@ fig.savefig(os.path.join(FIG_DIR, "fig6_ml_model_evaluation_and_lead_time.png"))
 plt.close(fig)
 
 print("[SUCCESS] All 6 publication-grade figures successfully generated and saved to figures/!")
+

@@ -1,0 +1,83 @@
+{
+  "task": "regression",
+  "metric": "r2",
+  "baseline_score": -4.285597505759853e-07,
+  "baseline_strategy": "mean",
+  "beats_baseline": true,
+  "n_train": 17268,
+  "n_test": 4318,
+  "holdout_test_size": 0.2,
+  "feature_columns": [
+    "station_code",
+    "station_name",
+    "district",
+    "hydro_zone",
+    "latitude",
+    "longitude",
+    "year",
+    "depth_may",
+    "depth_nov",
+    "recharge_delta",
+    "recharge_gap_flag",
+    "relative_recovery_ratio",
+    "depth_jan_next",
+    "rabi_drawdown",
+    "stress_alarm_next",
+    "trailing_depth_mean_3yr",
+    "baseline_persistence_pred",
+    "baseline_persistence_abs_err"
+  ],
+  "candidates": [
+    {
+      "name": "random_forest",
+      "algorithm": "random_forest",
+      "primary_metric": "r2",
+      "primary_score": 0.9665307259996,
+      "metrics": {
+        "r2": 0.9665307259996,
+        "rmse": 1.3625550559993487,
+        "mae": 0.7508855365756802
+      },
+      "cv_mean": 0.9632132442733955,
+      "cv_std": 0.006171331362131093,
+      "train_seconds": 47.07400769999367,
+      "inference_ms_per_1k": 30.56
+    },
+    {
+      "name": "gradient_boosting",
+      "algorithm": "gradient_boosting",
+      "primary_metric": "r2",
+      "primary_score": 0.9477017270552293,
+      "metrics": {
+        "r2": 0.9477017270552293,
+        "rmse": 1.7032350564178356,
+        "mae": 1.1587021086215077
+      },
+      "cv_mean": 0.9436359116515292,
+      "cv_std": 0.005644696116543226,
+      "train_seconds": 4.9598408000019845,
+      "inference_ms_per_1k": 5.97
+    },
+    {
+      "name": "linear_regression",
+      "algorithm": "linear_regression",
+      "primary_metric": "r2",
+      "primary_score": 0.9109002895612653,
+      "metrics": {
+        "r2": 0.9109002895612653,
+        "rmse": 2.223151503003441,
+        "mae": 1.5599930486434506
+      },
+      "cv_mean": 0.8872292143378611,
+      "cv_std": 0.04093106837127095,
+      "train_seconds": 0.4287019999901531,
+      "inference_ms_per_1k": 6.239
+    }
+  ],
+  "selected": "random_forest",
+  "selected_metrics": {
+    "r2": 0.9665307259996,
+    "rmse": 1.3625550559993487,
+    "mae": 0.7508855365756802
+  }
+}

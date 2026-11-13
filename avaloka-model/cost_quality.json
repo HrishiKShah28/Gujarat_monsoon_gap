@@ -1,0 +1,63 @@
+{
+  "options": {
+    "Economical": {
+      "candidate": "gradient_boosting",
+      "validation_score": 0.9477,
+      "metric": "r2",
+      "training_cost_usd": 0.0002,
+      "api_latency_ms": 5.97,
+      "est_monthly_serving_usd": 26.36
+    },
+    "Balanced": {
+      "candidate": "gradient_boosting",
+      "validation_score": 0.9477,
+      "metric": "r2",
+      "training_cost_usd": 0.0002,
+      "api_latency_ms": 5.97,
+      "est_monthly_serving_usd": 26.36
+    },
+    "Maximum quality": {
+      "candidate": "random_forest",
+      "validation_score": 0.9665,
+      "metric": "r2",
+      "training_cost_usd": 0.0016,
+      "api_latency_ms": 30.56,
+      "est_monthly_serving_usd": 60.78
+    }
+  },
+  "all_candidates": [
+    {
+      "candidate": "random_forest",
+      "validation_score": 0.9665,
+      "metric": "r2",
+      "training_cost_usd": 0.0016,
+      "api_latency_ms": 30.56,
+      "est_monthly_serving_usd": 60.78
+    },
+    {
+      "candidate": "gradient_boosting",
+      "validation_score": 0.9477,
+      "metric": "r2",
+      "training_cost_usd": 0.0002,
+      "api_latency_ms": 5.97,
+      "est_monthly_serving_usd": 26.36
+    },
+    {
+      "candidate": "linear_regression",
+      "validation_score": 0.9109,
+      "metric": "r2",
+      "training_cost_usd": 0.0,
+      "api_latency_ms": 6.24,
+      "est_monthly_serving_usd": 26.73
+    }
+  ],
+  "recommendation": {
+    "choice": "Economical",
+    "rationale": "Higher-cost models add negligible quality; the Economical option is the rational default."
+  },
+  "assumptions": {
+    "cpu_usd_per_hour": 0.12,
+    "serving_base_usd": 18.0,
+    "serving_latency_usd_per_ms": 1.4
+  }
+}

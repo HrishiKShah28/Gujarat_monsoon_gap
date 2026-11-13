@@ -47,3 +47,4 @@ Rather than running isolated scripts, the entire analysis was executed on the **
    - In **North Gujarat**: Prioritize subsurface injection recharge shafts and enforce strict moratoriums on new deep tube-well energization.
    - In **Saurashtra**: Ration agricultural 3-phase electricity hours on rural feeders during the Rabi season to preserve the fragile fracture-zone water column until summer.
 3. **Target High-Deficit Corridors**: Focus artificial recharge infrastructure specifically on the Mehsana-Kachchh-Patan corridor where recharge failure exceeds $5\text{--}12\%$.
+

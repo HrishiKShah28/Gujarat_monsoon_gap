@@ -112,3 +112,4 @@ def stage4_train_mta_model(mdf):
         'ridge_regressor': {'rmse': ridge_rmse, 'mae': ridge_mae, 'r2': ridge_r2}
     }
     return results
+

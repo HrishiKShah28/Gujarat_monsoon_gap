@@ -18,3 +18,7 @@ Thumbs.db
 *.tmp
 *.bak
 
+
+# Large model binaries
+*.pkl
+avaloka-model/model/*.pkl

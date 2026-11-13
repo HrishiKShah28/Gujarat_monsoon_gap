@@ -1,0 +1,593 @@
+{
+  "dataset": {
+    "source": "C:\\Users\\Hrishi\\Desktop\\projects\\Gujarat Monsoon gap\\data\\processed\\gujarat_groundwater_seasonal_paired.csv",
+    "format": "csv",
+    "sha256": "6c6bd4c18d06977503ceb6f35cb775efb1fa7fdd5e7c6d65250be7b5404b4944",
+    "n_rows": 22820,
+    "n_cols": 16,
+    "delimiter": ","
+  },
+  "columns": [
+    {
+      "name": "station_code",
+      "dtype": "object",
+      "role": "categorical",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 1598,
+      "unique_pct": 0.07,
+      "top_values": [
+        {
+          "value": "SURAT_SRT-25",
+          "count": 29
+        },
+        {
+          "value": "BHAVNAGAR_BVN-045",
+          "count": 29
+        },
+        {
+          "value": "JUNAGADH_JND-081",
+          "count": 29
+        },
+        {
+          "value": "JUNAGADH_JND-082",
+          "count": 29
+        },
+        {
+          "value": "TAPI_SRT-39",
+          "count": 29
+        },
+        {
+          "value": "JUNAGADH_JND-083",
+          "count": 29
+        },
+        {
+          "value": "TAPI_SRT-43",
+          "count": 29
+        },
+        {
+          "value": "JUNAGADH_JND-086",
+          "count": 29
+        },
+        {
+          "value": "TAPI_SRT-61",
+          "count": 29
+        },
+        {
+          "value": "TAPI_SRT-62",
+          "count": 29
+        }
+      ],
+      "sample_values": [
+        "AHMEDABAD_AD-04B",
+        "AHMEDABAD_AD-04B",
+        "AHMEDABAD_AD-04B",
+        "AHMEDABAD_AD-04B",
+        "AHMEDABAD_AD-04B"
+      ]
+    },
+    {
+      "name": "station_name",
+      "dtype": "object",
+      "role": "categorical",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 1595,
+      "unique_pct": 0.0699,
+      "top_values": [
+        {
+          "value": "SRT-27",
+          "count": 29
+        },
+        {
+          "value": "SN-084",
+          "count": 29
+        },
+        {
+          "value": "JND-081",
+          "count": 29
+        },
+        {
+          "value": "JND-082",
+          "count": 29
+        },
+        {
+          "value": "SRT-39",
+          "count": 29
+        },
+        {
+          "value": "JND-083",
+          "count": 29
+        },
+        {
+          "value": "SRT-43",
+          "count": 29
+        },
+        {
+          "value": "JND-086",
+          "count": 29
+        },
+        {
+          "value": "SRT-61",
+          "count": 29
+        },
+        {
+          "value": "SRT-62",
+          "count": 29
+        }
+      ],
+      "sample_values": [
+        "AD-04B",
+        "AD-04B",
+        "AD-04B",
+        "AD-04B",
+        "AD-04B"
+      ]
+    },
+    {
+      "name": "district",
+      "dtype": "object",
+      "role": "categorical",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 34,
+      "unique_pct": 0.0015,
+      "top_values": [
+        {
+          "value": "Junagadh",
+          "count": 2640
+        },
+        {
+          "value": "Amreli",
+          "count": 1584
+        },
+        {
+          "value": "Jamnagar",
+          "count": 1473
+        },
+        {
+          "value": "Kachchh",
+          "count": 1229
+        },
+        {
+          "value": "Valsad",
+          "count": 1186
+        },
+        {
+          "value": "Surendranagar",
+          "count": 1181
+        },
+        {
+          "value": "Surat",
+          "count": 1068
+        },
+        {
+          "value": "Bhavnagar",
+          "count": 1007
+        },
+        {
+          "value": "Devbhumi Dwarka",
+          "count": 914
+        },
+        {
+          "value": "Panchmahals",
+          "count": 866
+        }
+      ],
+      "sample_values": [
+        "Ahmedabad",
+        "Ahmedabad",
+        "Ahmedabad",
+        "Ahmedabad",
+        "Ahmedabad"
+      ]
+    },
+    {
+      "name": "hydro_zone",
+      "dtype": "object",
+      "role": "categorical",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 4,
+      "unique_pct": 0.0002,
+      "top_values": [
+        {
+          "value": "Saurashtra Hard-Rock Basalt",
+          "count": 9844
+        },
+        {
+          "value": "South & Central Gujarat Plain",
+          "count": 9401
+        },
+        {
+          "value": "North Gujarat Alluvium",
+          "count": 2346
+        },
+        {
+          "value": "Kachchh Arid Sedimentary",
+          "count": 1229
+        }
+      ],
+      "sample_values": [
+        "North Gujarat Alluvium",
+        "North Gujarat Alluvium",
+        "North Gujarat Alluvium",
+        "North Gujarat Alluvium",
+        "North Gujarat Alluvium"
+      ]
+    },
+    {
+      "name": "latitude",
+      "dtype": "float64",
+      "role": "numeric",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 1409,
+      "unique_pct": 0.0617,
+      "stats": {
+        "min": 20.16027778,
+        "max": 24.65944444,
+        "mean": 22.135117,
+        "median": 22.087778,
+        "std": 1.004612,
+        "p25": 21.33277778,
+        "p75": 22.85972222,
+        "skew": 0.2156,
+        "n_outliers": 0
+      },
+      "sample_values": [
+        22.37222222,
+        22.37222222,
+        22.37222222,
+        22.37222222,
+        22.37222222
+      ]
+    },
+    {
+      "name": "longitude",
+      "dtype": "float64",
+      "role": "numeric",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 1433,
+      "unique_pct": 0.0628,
+      "stats": {
+        "min": 68.52805556,
+        "max": 74.40055556,
+        "mean": 71.968223,
+        "median": 72.315,
+        "std": 1.467041,
+        "p25": 70.65861111,
+        "p75": 73.20222222,
+        "skew": -0.3384,
+        "n_outliers": 0
+      },
+      "sample_values": [
+        71.93861111,
+        71.93861111,
+        71.93861111,
+        71.93861111,
+        71.93861111
+      ]
+    },
+    {
+      "name": "year",
+      "dtype": "int64",
+      "role": "numeric",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 31,
+      "unique_pct": 0.0014,
+      "stats": {
+        "min": 1991.0,
+        "max": 2022.0,
+        "mean": 2006.201797,
+        "median": 2007.0,
+        "std": 8.531887,
+        "p25": 1999.0,
+        "p75": 2013.0,
+        "skew": -0.0711,
+        "n_outliers": 0
+      },
+      "sample_values": [
+        1992,
+        1993,
+        1994,
+        1995,
+        1996
+      ]
+    },
+    {
+      "name": "depth_may",
+      "dtype": "float64",
+      "role": "numeric",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 1383,
+      "unique_pct": 0.0606,
+      "stats": {
+        "min": 0.0,
+        "max": 195.72,
+        "mean": 11.441589,
+        "median": 10.05,
+        "std": 7.982745,
+        "p25": 6.5725,
+        "p75": 15.0,
+        "skew": 6.5465,
+        "n_outliers": 442
+      },
+      "sample_values": [
+        12.25,
+        10.6,
+        10.3,
+        10.5,
+        11.25
+      ]
+    },
+    {
+      "name": "depth_nov",
+      "dtype": "float64",
+      "role": "numeric",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 1303,
+      "unique_pct": 0.0571,
+      "stats": {
+        "min": 0.05,
+        "max": 191.17,
+        "mean": 7.096885,
+        "median": 5.35,
+        "std": 7.33501,
+        "p25": 3.0,
+        "p75": 9.2,
+        "skew": 8.5381,
+        "n_outliers": 985
+      },
+      "sample_values": [
+        9.8,
+        9.3,
+        8.85,
+        9.8,
+        10.05
+      ]
+    },
+    {
+      "name": "recharge_delta",
+      "dtype": "float64",
+      "role": "numeric",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 2289,
+      "unique_pct": 0.1003,
+      "stats": {
+        "min": -73.36000000000001,
+        "max": 39.8,
+        "mean": 4.344704,
+        "median": 3.2,
+        "std": 4.170262,
+        "p25": 1.4000000000000004,
+        "p75": 6.000000000000001,
+        "skew": 1.3297,
+        "n_outliers": 1096
+      },
+      "sample_values": [
+        2.4499999999999997,
+        1.299999999999999,
+        1.450000000000001,
+        0.6999999999999993,
+        1.1999999999999993
+      ]
+    },
+    {
+      "name": "recharge_gap_flag",
+      "dtype": "int64",
+      "role": "numeric",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 2,
+      "unique_pct": 0.0001,
+      "stats": {
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.017967,
+        "median": 0.0,
+        "std": 0.132833,
+        "p25": 0.0,
+        "p75": 0.0,
+        "skew": 7.2584,
+        "n_outliers": 410
+      },
+      "sample_values": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "name": "relative_recovery_ratio",
+      "dtype": "float64",
+      "role": "numeric",
+      "missing": 3,
+      "missing_pct": 0.0001,
+      "n_unique": 11768,
+      "unique_pct": 0.5157,
+      "stats": {
+        "min": -12.733333333333334,
+        "max": 0.9945652173913044,
+        "mean": 0.391727,
+        "median": 0.382759,
+        "std": 0.277,
+        "p25": 0.1733333333333333,
+        "p75": 0.6,
+        "skew": -4.822,
+        "n_outliers": 40
+      },
+      "sample_values": [
+        0.1999999999999999,
+        0.1226415094339621,
+        0.1407766990291263,
+        0.0666666666666666,
+        0.1066666666666666
+      ]
+    },
+    {
+      "name": "depth_jan_next",
+      "dtype": "float64",
+      "role": "numeric",
+      "missing": 22054,
+      "missing_pct": 0.9664,
+      "n_unique": 389,
+      "unique_pct": 0.017,
+      "stats": {
+        "min": 0.35,
+        "max": 198.83,
+        "mean": 12.728251,
+        "median": 8.475,
+        "std": 20.151002,
+        "p25": 5.0,
+        "p75": 14.58,
+        "skew": 5.9022,
+        "n_outliers": 24
+      },
+      "sample_values": [
+        6.28,
+        9.93,
+        5.01,
+        1.73,
+        1.88
+      ]
+    },
+    {
+      "name": "rabi_drawdown",
+      "dtype": "float64",
+      "role": "numeric",
+      "missing": 22054,
+      "missing_pct": 0.9664,
+      "n_unique": 418,
+      "unique_pct": 0.0183,
+      "stats": {
+        "min": -66.31,
+        "max": 16.10000000000001,
+        "mean": 1.176723,
+        "median": 1.0,
+        "std": 3.630285,
+        "p25": 0.3750000000000008,
+        "p75": 2.0,
+        "skew": -10.8814,
+        "n_outliers": 78
+      },
+      "sample_values": [
+        1.99,
+        0.8900000000000006,
+        0.1099999999999994,
+        0.3999999999999999,
+        0.4599999999999999
+      ]
+    },
+    {
+      "name": "depth_may_next",
+      "dtype": "float64",
+      "role": "numeric",
+      "missing": 1234,
+      "missing_pct": 0.0541,
+      "n_unique": 1357,
+      "unique_pct": 0.0595,
+      "stats": {
+        "min": 0.0,
+        "max": 197.3,
+        "mean": 11.332277,
+        "median": 10.0,
+        "std": 7.450862,
+        "p25": 6.55,
+        "p75": 14.9,
+        "skew": 5.715,
+        "n_outliers": 415
+      },
+      "sample_values": [
+        10.6,
+        10.3,
+        10.5,
+        11.25,
+        11.2
+      ]
+    },
+    {
+      "name": "stress_alarm_next",
+      "dtype": "float64",
+      "role": "numeric",
+      "missing": 1234,
+      "missing_pct": 0.0541,
+      "n_unique": 2,
+      "unique_pct": 0.0001,
+      "stats": {
+        "min": 0.0,
+        "max": 1.0,
+        "mean": 0.24817,
+        "median": 0.0,
+        "std": 0.431961,
+        "p25": 0.0,
+        "p75": 0.0,
+        "skew": 1.1661,
+        "n_outliers": 5357
+      },
+      "sample_values": [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "quality": {
+    "score": 76,
+    "n_rows": 22820,
+    "n_cols": 16,
+    "duplicate_rows": 0,
+    "constant_columns": [],
+    "high_missing_columns": [
+      "depth_jan_next",
+      "rabi_drawdown"
+    ],
+    "high_cardinality_columns": [],
+    "id_columns": [],
+    "issues": [
+      {
+        "severity": "high",
+        "column": "depth_jan_next",
+        "kind": "high_missingness",
+        "detail": "96.6% missing."
+      },
+      {
+        "severity": "high",
+        "column": "rabi_drawdown",
+        "kind": "high_missingness",
+        "detail": "96.6% missing."
+      }
+    ]
+  },
+  "correlations": [
+    {
+      "a": "depth_nov",
+      "b": "depth_jan_next",
+      "corr": 0.9837
+    },
+    {
+      "a": "depth_may",
+      "b": "depth_jan_next",
+      "corr": 0.9832
+    },
+    {
+      "a": "depth_jan_next",
+      "b": "depth_may_next",
+      "corr": 0.9446
+    },
+    {
+      "a": "depth_may",
+      "b": "depth_may_next",
+      "corr": 0.9212
+    }
+  ]
+}

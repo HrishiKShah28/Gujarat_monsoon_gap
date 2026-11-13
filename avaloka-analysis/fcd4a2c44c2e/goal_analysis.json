@@ -1,0 +1,39 @@
+{
+  "goal": "how does depth vary by hydro_zone",
+  "kind": "group_comparison",
+  "status": "answered",
+  "scope": "All 52,919 working rows",
+  "columns": [
+    "depth",
+    "hydro_zone"
+  ],
+  "metrics": {
+    "group_column": "hydro_zone",
+    "value_column": "depth",
+    "aggregation": "mean",
+    "groups": [
+      {
+        "group": "North Gujarat Alluvium",
+        "value": 15.562619
+      },
+      {
+        "group": "Saurashtra Hard-Rock Basalt",
+        "value": 10.023467
+      },
+      {
+        "group": "Kachchh Arid Sedimentary",
+        "value": 9.976601
+      },
+      {
+        "group": "South & Central Gujarat Plain",
+        "value": 7.488221
+      }
+    ]
+  },
+  "findings": [
+    "hydro_zone=North Gujarat Alluvium: mean depth=15.6.",
+    "hydro_zone=Saurashtra Hard-Rock Basalt: mean depth=10.",
+    "hydro_zone=Kachchh Arid Sedimentary: mean depth=9.98.",
+    "hydro_zone=South & Central Gujarat Plain: mean depth=7.49."
+  ]
+}

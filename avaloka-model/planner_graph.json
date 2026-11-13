@@ -1,0 +1,134 @@
+{
+  "mission_id": "d792d994feea",
+  "goal": "Predict 'depth_may_next'",
+  "task": "regression",
+  "task_reason": "Numeric target with 1357 distinct values.",
+  "target": "depth_may_next",
+  "metric": null,
+  "split": {
+    "strategy": "random_train_test",
+    "test_size": 0.2,
+    "reason": "Random holdout is valid for i.i.d. tabular regression."
+  },
+  "sampling": {
+    "sampled": false,
+    "strategy": "none"
+  },
+  "candidate_algorithms": [
+    "linear_regression",
+    "random_forest",
+    "gradient_boosting"
+  ],
+  "compute_plan": {
+    "execution_mode": "local",
+    "device": "cpu",
+    "max_candidates": 3,
+    "cost_per_candidate_usd": 0.05,
+    "budget_note": "Unconstrained budget; all candidate algorithms considered."
+  },
+  "data_sufficiency": {
+    "sufficient": true,
+    "n_rows": 21586,
+    "rows_recommended": 900,
+    "reason": "~50 rows/feature suggests >= 900 rows for 18 features."
+  },
+  "hypotheses": [
+    "'depth_may' and 'baseline_persistence_pred' move together (|corr|=1.0); consider redundancy or a shared driver.",
+    "'depth_may' and 'depth_jan_next' move together (|corr|=0.9817); consider redundancy or a shared driver.",
+    "'depth_jan_next' and 'baseline_persistence_pred' move together (|corr|=0.9817); consider redundancy or a shared driver.",
+    "Identify which features most influence 'depth_may_next' and quantify the effect."
+  ],
+  "human_approval_gates": [
+    "Confirm the target and metric match the intended decision.",
+    "Approve the model before any Level 4 (production) deployment.",
+    "Decide an imputation policy for high-missingness columns."
+  ],
+  "refuse_if": [
+    "Target leakage is detected and unresolved.",
+    "Data is insufficient for a stable estimate of the chosen metric.",
+    "A requested deployment latency cannot be met by any candidate."
+  ],
+  "execution_graph": {
+    "nodes": [
+      {
+        "id": "data_scout",
+        "role": "Data analyst",
+        "produces": "data_quality.json"
+      },
+      {
+        "id": "sampling_specialist",
+        "role": "Data scientist",
+        "produces": "working sample"
+      },
+      {
+        "id": "data_engineer",
+        "role": "Data engineer",
+        "produces": "transformed_dataset.parquet"
+      },
+      {
+        "id": "analysis_planner",
+        "role": "Senior data scientist",
+        "produces": "planner_graph.json"
+      },
+      {
+        "id": "model_scientist",
+        "role": "ML scientist",
+        "produces": "model + experiments"
+      },
+      {
+        "id": "validator",
+        "role": "Model-risk specialist",
+        "produces": "validation_report.json"
+      },
+      {
+        "id": "finops",
+        "role": "Infrastructure engineer",
+        "produces": "cost-quality options"
+      },
+      {
+        "id": "ml_engineer",
+        "role": "ML platform engineer",
+        "produces": "deployment package"
+      },
+      {
+        "id": "reporter",
+        "role": "Analyst / consultant",
+        "produces": "executive & technical reports"
+      }
+    ],
+    "edges": [
+      {
+        "from": "data_scout",
+        "to": "sampling_specialist"
+      },
+      {
+        "from": "sampling_specialist",
+        "to": "data_engineer"
+      },
+      {
+        "from": "data_engineer",
+        "to": "analysis_planner"
+      },
+      {
+        "from": "analysis_planner",
+        "to": "model_scientist"
+      },
+      {
+        "from": "model_scientist",
+        "to": "validator"
+      },
+      {
+        "from": "validator",
+        "to": "finops"
+      },
+      {
+        "from": "finops",
+        "to": "ml_engineer"
+      },
+      {
+        "from": "ml_engineer",
+        "to": "reporter"
+      }
+    ]
+  }
+}
