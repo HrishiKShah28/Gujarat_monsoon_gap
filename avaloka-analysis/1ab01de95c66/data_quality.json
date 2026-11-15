@@ -1,0 +1,933 @@
+{
+  "dataset": {
+    "source": "data\\processed\\gujarat_groundwater_analytical.csv",
+    "format": "csv",
+    "sha256": "ee99aac3f2889600111d6f19b4533e7f9b4b9850b5ee1eec98a781a311acfcb2",
+    "n_rows": 52919,
+    "n_cols": 25,
+    "delimiter": ","
+  },
+  "columns": [
+    {
+      "name": "slno",
+      "dtype": "int64",
+      "role": "numeric",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 46302,
+      "unique_pct": 0.875,
+      "stats": {
+        "min": 1.0,
+        "max": 46426.0,
+        "mean": 20705.254937,
+        "median": 19844.0,
+        "std": 14169.034325,
+        "p25": 6658.0,
+        "p75": 33132.5,
+        "skew": 0.1805,
+        "n_outliers": 0
+      },
+      "sample_values": [
+        65,
+        66,
+        67,
+        68,
+        69
+      ]
+    },
+    {
+      "name": "station_name",
+      "dtype": "object",
+      "role": "categorical",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 2040,
+      "unique_pct": 0.0385,
+      "top_values": [
+        {
+          "value": "SK-035",
+          "count": 83
+        },
+        {
+          "value": "SK-059",
+          "count": 82
+        },
+        {
+          "value": "SK-025A",
+          "count": 80
+        },
+        {
+          "value": "SK-001",
+          "count": 79
+        },
+        {
+          "value": "MSH-027",
+          "count": 78
+        },
+        {
+          "value": "SK-083",
+          "count": 78
+        },
+        {
+          "value": "MSH-021",
+          "count": 78
+        },
+        {
+          "value": "MSH-019",
+          "count": 78
+        },
+        {
+          "value": "MSH-016",
+          "count": 78
+        },
+        {
+          "value": "MSH-014",
+          "count": 78
+        }
+      ],
+      "sample_values": [
+        "AD-04B",
+        "AD-04B",
+        "AD-04B",
+        "AD-04B",
+        "AD-04B"
+      ]
+    },
+    {
+      "name": "agency",
+      "dtype": "object",
+      "role": "categorical",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 2,
+      "unique_pct": 0.0,
+      "top_values": [
+        {
+          "value": "Gujarat SW GW",
+          "count": 46300
+        },
+        {
+          "value": "CGWB",
+          "count": 6619
+        }
+      ],
+      "sample_values": [
+        "Gujarat SW GW",
+        "Gujarat SW GW",
+        "Gujarat SW GW",
+        "Gujarat SW GW",
+        "Gujarat SW GW"
+      ]
+    },
+    {
+      "name": "state_lgd_code",
+      "dtype": "int64",
+      "role": "constant",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 1,
+      "unique_pct": 0.0,
+      "sample_values": [
+        24,
+        24,
+        24,
+        24,
+        24
+      ]
+    },
+    {
+      "name": "state",
+      "dtype": "object",
+      "role": "constant",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 1,
+      "unique_pct": 0.0,
+      "sample_values": [
+        "Gujarat",
+        "Gujarat",
+        "Gujarat",
+        "Gujarat",
+        "Gujarat"
+      ]
+    },
+    {
+      "name": "district_lgd_code",
+      "dtype": "int64",
+      "role": "numeric",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 33,
+      "unique_pct": 0.0006,
+      "stats": {
+        "min": 438.0,
+        "max": 676.0,
+        "mean": 480.806119,
+        "median": 451.0,
+        "std": 75.920694,
+        "p25": 447.0,
+        "p75": 460.0,
+        "skew": 2.0402,
+        "n_outliers": 7477
+      },
+      "sample_values": [
+        438,
+        438,
+        438,
+        438,
+        438
+      ]
+    },
+    {
+      "name": "district",
+      "dtype": "object",
+      "role": "categorical",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 34,
+      "unique_pct": 0.0006,
+      "top_values": [
+        {
+          "value": "Junagadh",
+          "count": 5703
+        },
+        {
+          "value": "Amreli",
+          "count": 3535
+        },
+        {
+          "value": "Jamnagar",
+          "count": 3288
+        },
+        {
+          "value": "Kachchh",
+          "count": 2857
+        },
+        {
+          "value": "Surendranagar",
+          "count": 2606
+        },
+        {
+          "value": "Valsad",
+          "count": 2479
+        },
+        {
+          "value": "Surat",
+          "count": 2384
+        },
+        {
+          "value": "Bhavnagar",
+          "count": 2304
+        },
+        {
+          "value": "Sabarkantha",
+          "count": 2159
+        },
+        {
+          "value": "Mahesana",
+          "count": 2003
+        }
+      ],
+      "sample_values": [
+        "Ahmedabad",
+        "Ahmedabad",
+        "Ahmedabad",
+        "Ahmedabad",
+        "Ahmedabad"
+      ]
+    },
+    {
+      "name": "tehsil",
+      "dtype": "object",
+      "role": "categorical",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 264,
+      "unique_pct": 0.005,
+      "top_values": [
+        {
+          "value": "UNA",
+          "count": 757
+        },
+        {
+          "value": "UMBERGAON",
+          "count": 703
+        },
+        {
+          "value": "DANTA",
+          "count": 687
+        },
+        {
+          "value": "PARDI",
+          "count": 648
+        },
+        {
+          "value": "JAMJODHPUR",
+          "count": 644
+        },
+        {
+          "value": "Bayad",
+          "count": 629
+        },
+        {
+          "value": "PORBANDAR",
+          "count": 621
+        },
+        {
+          "value": "DHARI",
+          "count": 618
+        },
+        {
+          "value": "JAMNAGAR",
+          "count": 608
+        },
+        {
+          "value": "TALAJA",
+          "count": 606
+        }
+      ],
+      "sample_values": [
+        "DHANDHUKA",
+        "DHANDHUKA",
+        "DHANDHUKA",
+        "DHANDHUKA",
+        "DHANDHUKA"
+      ]
+    },
+    {
+      "name": "block",
+      "dtype": "object",
+      "role": "categorical",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 213,
+      "unique_pct": 0.004,
+      "top_values": [
+        {
+          "value": "-",
+          "count": 46497
+        },
+        {
+          "value": "The dangs",
+          "count": 182
+        },
+        {
+          "value": "PORBANDAR",
+          "count": 171
+        },
+        {
+          "value": "MANGROL",
+          "count": 151
+        },
+        {
+          "value": "KUNDLA-SAVAR",
+          "count": 78
+        },
+        {
+          "value": "MAHUVA",
+          "count": 74
+        },
+        {
+          "value": "BHUJ",
+          "count": 72
+        },
+        {
+          "value": "JAMBUSAR",
+          "count": 71
+        },
+        {
+          "value": "THARAD",
+          "count": 69
+        },
+        {
+          "value": "MAHESANA",
+          "count": 68
+        }
+      ],
+      "sample_values": [
+        "-",
+        "-",
+        "-",
+        "-",
+        "-"
+      ]
+    },
+    {
+      "name": "village",
+      "dtype": "object",
+      "role": "categorical",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 898,
+      "unique_pct": 0.017,
+      "top_values": [
+        {
+          "value": "-",
+          "count": 46497
+        },
+        {
+          "value": "Godhra",
+          "count": 30
+        },
+        {
+          "value": "Virpur",
+          "count": 28
+        },
+        {
+          "value": "Adalaj",
+          "count": 26
+        },
+        {
+          "value": "Dohad",
+          "count": 24
+        },
+        {
+          "value": "Kalyanpur",
+          "count": 21
+        },
+        {
+          "value": "Kalol",
+          "count": 21
+        },
+        {
+          "value": "Timbi",
+          "count": 19
+        },
+        {
+          "value": "Hansalpur",
+          "count": 19
+        },
+        {
+          "value": "Tarapur",
+          "count": 18
+        }
+      ],
+      "sample_values": [
+        "-",
+        "-",
+        "-",
+        "-",
+        "-"
+      ]
+    },
+    {
+      "name": "river",
+      "dtype": "object",
+      "role": "constant",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 1,
+      "unique_pct": 0.0,
+      "sample_values": [
+        "-",
+        "-",
+        "-",
+        "-",
+        "-"
+      ]
+    },
+    {
+      "name": "basin",
+      "dtype": "object",
+      "role": "constant",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 1,
+      "unique_pct": 0.0,
+      "sample_values": [
+        "-",
+        "-",
+        "-",
+        "-",
+        "-"
+      ]
+    },
+    {
+      "name": "tributary",
+      "dtype": "object",
+      "role": "constant",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 1,
+      "unique_pct": 0.0,
+      "sample_values": [
+        "-",
+        "-",
+        "-",
+        "-",
+        "-"
+      ]
+    },
+    {
+      "name": "subtributary",
+      "dtype": "object",
+      "role": "constant",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 1,
+      "unique_pct": 0.0,
+      "sample_values": [
+        "-",
+        "-",
+        "-",
+        "-",
+        "-"
+      ]
+    },
+    {
+      "name": "subsubtributary",
+      "dtype": "object",
+      "role": "constant",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 1,
+      "unique_pct": 0.0,
+      "sample_values": [
+        "-",
+        "-",
+        "-",
+        "-",
+        "-"
+      ]
+    },
+    {
+      "name": "local_river",
+      "dtype": "object",
+      "role": "constant",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 1,
+      "unique_pct": 0.0,
+      "sample_values": [
+        "-",
+        "-",
+        "-",
+        "-",
+        "-"
+      ]
+    },
+    {
+      "name": "latitude",
+      "dtype": "float64",
+      "role": "numeric",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 1706,
+      "unique_pct": 0.0322,
+      "stats": {
+        "min": 20.16027778,
+        "max": 24.65944444,
+        "mean": 22.19863,
+        "median": 22.151667,
+        "std": 1.02981,
+        "p25": 21.37222222,
+        "p75": 22.97861111,
+        "skew": 0.1848,
+        "n_outliers": 0
+      },
+      "sample_values": [
+        22.37222222,
+        22.37222222,
+        22.37222222,
+        22.37222222,
+        22.37222222
+      ]
+    },
+    {
+      "name": "longitude",
+      "dtype": "float64",
+      "role": "numeric",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 1721,
+      "unique_pct": 0.0325,
+      "stats": {
+        "min": 68.52805556,
+        "max": 74.40055556,
+        "mean": 71.986651,
+        "median": 72.396667,
+        "std": 1.449035,
+        "p25": 70.69138889,
+        "p75": 73.18777778,
+        "skew": -0.3762,
+        "n_outliers": 0
+      },
+      "sample_values": [
+        71.93861111,
+        71.93861111,
+        71.93861111,
+        71.93861111,
+        71.93861111
+      ]
+    },
+    {
+      "name": "data_collection_date",
+      "dtype": "object",
+      "role": "datetime",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 120,
+      "unique_pct": 0.0023,
+      "sample_values": [
+        "1992-05-01 00:00:00",
+        "1992-10-01 00:00:00",
+        "1993-05-01 00:00:00",
+        "1993-10-01 00:00:00",
+        "1994-05-01 00:00:00"
+      ]
+    },
+    {
+      "name": "depth",
+      "dtype": "float64",
+      "role": "numeric",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 2800,
+      "unique_pct": 0.0529,
+      "stats": {
+        "min": 0.0,
+        "max": 198.83,
+        "mean": 9.659193,
+        "median": 7.5,
+        "std": 11.009812,
+        "p25": 4.1,
+        "p75": 12.45,
+        "skew": 7.6502,
+        "n_outliers": 1525
+      },
+      "sample_values": [
+        12.25,
+        9.8,
+        10.6,
+        9.3,
+        10.3
+      ]
+    },
+    {
+      "name": "year",
+      "dtype": "int64",
+      "role": "numeric",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 32,
+      "unique_pct": 0.0006,
+      "stats": {
+        "min": 1991.0,
+        "max": 2023.0,
+        "mean": 2007.87067,
+        "median": 2008.0,
+        "std": 9.252921,
+        "p25": 2000.0,
+        "p75": 2016.0,
+        "skew": -0.1086,
+        "n_outliers": 0
+      },
+      "sample_values": [
+        1992,
+        1992,
+        1993,
+        1993,
+        1994
+      ]
+    },
+    {
+      "name": "month",
+      "dtype": "int64",
+      "role": "numeric",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 8,
+      "unique_pct": 0.0002,
+      "stats": {
+        "min": 1.0,
+        "max": 11.0,
+        "mean": 7.270923,
+        "median": 8.0,
+        "std": 2.79454,
+        "p25": 5.0,
+        "p75": 10.0,
+        "skew": -0.3003,
+        "n_outliers": 0
+      },
+      "sample_values": [
+        5,
+        10,
+        5,
+        10,
+        5
+      ]
+    },
+    {
+      "name": "hydro_zone",
+      "dtype": "object",
+      "role": "categorical",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 4,
+      "unique_pct": 0.0001,
+      "top_values": [
+        {
+          "value": "Saurashtra Hard-Rock Basalt",
+          "count": 21902
+        },
+        {
+          "value": "South & Central Gujarat Plain",
+          "count": 21689
+        },
+        {
+          "value": "North Gujarat Alluvium",
+          "count": 6471
+        },
+        {
+          "value": "Kachchh Arid Sedimentary",
+          "count": 2857
+        }
+      ],
+      "sample_values": [
+        "North Gujarat Alluvium",
+        "North Gujarat Alluvium",
+        "North Gujarat Alluvium",
+        "North Gujarat Alluvium",
+        "North Gujarat Alluvium"
+      ]
+    },
+    {
+      "name": "season",
+      "dtype": "object",
+      "role": "categorical",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 4,
+      "unique_pct": 0.0001,
+      "top_values": [
+        {
+          "value": "Post-Monsoon Kharif (November)",
+          "count": 24261
+        },
+        {
+          "value": "Pre-Monsoon Summer (May)",
+          "count": 23719
+        },
+        {
+          "value": "Post-Monsoon Rabi (January)",
+          "count": 2523
+        },
+        {
+          "value": "Mid-Monsoon (August)",
+          "count": 2416
+        }
+      ],
+      "sample_values": [
+        "Pre-Monsoon Summer (May)",
+        "Post-Monsoon Kharif (November)",
+        "Pre-Monsoon Summer (May)",
+        "Post-Monsoon Kharif (November)",
+        "Pre-Monsoon Summer (May)"
+      ]
+    },
+    {
+      "name": "station_code",
+      "dtype": "object",
+      "role": "categorical",
+      "missing": 0,
+      "missing_pct": 0.0,
+      "n_unique": 2046,
+      "unique_pct": 0.0387,
+      "top_values": [
+        {
+          "value": "SABARKANTHA_SK-035",
+          "count": 83
+        },
+        {
+          "value": "SABARKANTHA_SK-059",
+          "count": 82
+        },
+        {
+          "value": "SABARKANTHA_SK-025A",
+          "count": 80
+        },
+        {
+          "value": "ARAVALLI_SK-001",
+          "count": 79
+        },
+        {
+          "value": "ARAVALLI_SK-083",
+          "count": 78
+        },
+        {
+          "value": "MAHESANA_MSH-016",
+          "count": 78
+        },
+        {
+          "value": "MAHESANA_MSH-014",
+          "count": 78
+        },
+        {
+          "value": "MAHESANA_MSH-013",
+          "count": 78
+        },
+        {
+          "value": "MAHESANA_MSH-009",
+          "count": 78
+        },
+        {
+          "value": "MAHESANA_MSH-021",
+          "count": 78
+        }
+      ],
+      "sample_values": [
+        "AHMEDABAD_AD-04B",
+        "AHMEDABAD_AD-04B",
+        "AHMEDABAD_AD-04B",
+        "AHMEDABAD_AD-04B",
+        "AHMEDABAD_AD-04B"
+      ]
+    }
+  ],
+  "quality": {
+    "score": 84,
+    "n_rows": 52919,
+    "n_cols": 25,
+    "duplicate_rows": 0,
+    "constant_columns": [
+      "state_lgd_code",
+      "state",
+      "river",
+      "basin",
+      "tributary",
+      "subtributary",
+      "subsubtributary",
+      "local_river"
+    ],
+    "high_missing_columns": [],
+    "high_cardinality_columns": [],
+    "id_columns": [],
+    "issues": [
+      {
+        "severity": "low",
+        "column": "state_lgd_code",
+        "kind": "constant_column",
+        "detail": "Column has a single value; no predictive content."
+      },
+      {
+        "severity": "low",
+        "column": "state",
+        "kind": "constant_column",
+        "detail": "Column has a single value; no predictive content."
+      },
+      {
+        "severity": "low",
+        "column": "river",
+        "kind": "constant_column",
+        "detail": "Column has a single value; no predictive content."
+      },
+      {
+        "severity": "low",
+        "column": "basin",
+        "kind": "constant_column",
+        "detail": "Column has a single value; no predictive content."
+      },
+      {
+        "severity": "low",
+        "column": "tributary",
+        "kind": "constant_column",
+        "detail": "Column has a single value; no predictive content."
+      },
+      {
+        "severity": "low",
+        "column": "subtributary",
+        "kind": "constant_column",
+        "detail": "Column has a single value; no predictive content."
+      },
+      {
+        "severity": "low",
+        "column": "subsubtributary",
+        "kind": "constant_column",
+        "detail": "Column has a single value; no predictive content."
+      },
+      {
+        "severity": "low",
+        "column": "local_river",
+        "kind": "constant_column",
+        "detail": "Column has a single value; no predictive content."
+      }
+    ]
+  },
+  "correlations": [
+    {
+      "a": "slno",
+      "b": "latitude",
+      "corr": 0.2914
+    },
+    {
+      "a": "slno",
+      "b": "district_lgd_code",
+      "corr": 0.2422
+    },
+    {
+      "a": "slno",
+      "b": "year",
+      "corr": 0.2294
+    },
+    {
+      "a": "depth",
+      "b": "month",
+      "corr": 0.183
+    },
+    {
+      "a": "latitude",
+      "b": "depth",
+      "corr": 0.1704
+    },
+    {
+      "a": "slno",
+      "b": "longitude",
+      "corr": 0.1497
+    },
+    {
+      "a": "district_lgd_code",
+      "b": "latitude",
+      "corr": 0.1175
+    },
+    {
+      "a": "slno",
+      "b": "depth",
+      "corr": 0.1122
+    },
+    {
+      "a": "year",
+      "b": "month",
+      "corr": 0.1009
+    },
+    {
+      "a": "district_lgd_code",
+      "b": "year",
+      "corr": 0.0856
+    },
+    {
+      "a": "district_lgd_code",
+      "b": "longitude",
+      "corr": 0.0842
+    },
+    {
+      "a": "latitude",
+      "b": "longitude",
+      "corr": 0.0839
+    },
+    {
+      "a": "longitude",
+      "b": "depth",
+      "corr": 0.0809
+    },
+    {
+      "a": "latitude",
+      "b": "year",
+      "corr": 0.0712
+    },
+    {
+      "a": "slno",
+      "b": "month",
+      "corr": 0.0666
+    }
+  ]
+}

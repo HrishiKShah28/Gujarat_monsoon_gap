@@ -1,0 +1,112 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Technical report — how does recharge_delta vary by district</title>
+<style>
+body{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;color:#1b1f24;background:#f6f8fa}
+.wrap{max-width:960px;margin:0 auto;padding:32px}
+h1{font-size:28px;margin:0 0 4px} h2{font-size:20px;margin:28px 0 8px;border-bottom:1px solid #e1e4e8;padding-bottom:6px}
+.sub{color:#57606a;margin:0 0 20px}
+.card{background:#fff;border:1px solid #e1e4e8;border-radius:8px;padding:16px 20px;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:14px} th,td{text-align:left;padding:7px 10px;border-bottom:1px solid #eaecef}
+th{background:#f6f8fa} .kpi{display:inline-block;min-width:150px;margin:6px 18px 6px 0}
+.kpi .v{font-size:22px;font-weight:600} .kpi .l{color:#57606a;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.pass{color:#1a7f37;font-weight:600}.warn{color:#9a6700;font-weight:600}.fail{color:#cf222e;font-weight:600}
+.badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:12px;background:#ddf4ff;color:#0969da}
+.muted{color:#57606a;font-size:13px} code{background:#eff1f3;padding:1px 5px;border-radius:4px}
+</style></head><body><div class="wrap">
+<h1>Technical report</h1>
+<p class="sub">how does recharge_delta vary by district · mission <code>99ba26e5c9a4</code></p>
+
+<h2>Dataset</h2>
+<div class="card"><p><code>data\processed\gujarat_groundwater_seasonal_paired.csv</code> — 22820 rows × 16 cols
+(csv). Quality score <strong>76/100</strong>.
+SHA-256 <span class="muted">6c6bd4c18d069775…</span></p></div>
+
+<h2>Schema &amp; distributions</h2>
+<div class="card"><table><tr><th>Column</th><th>Role</th><th>Dtype</th><th>Missing</th><th>Unique</th><th>Summary</th></tr>
+<tr><td>station_code</td><td>categorical</td><td>object</td>
+<td>0.0%</td><td>1598</td>
+<td class="muted">top: SURAT_SRT-25(29), BHAVNAGAR_BVN-045(29), JUNAGADH_JND-081(29)</td></tr><tr><td>station_name</td><td>categorical</td><td>object</td>
+<td>0.0%</td><td>1595</td>
+<td class="muted">top: SRT-27(29), SN-084(29), JND-081(29)</td></tr><tr><td>district</td><td>categorical</td><td>object</td>
+<td>0.0%</td><td>34</td>
+<td class="muted">top: Junagadh(2640), Amreli(1584), Jamnagar(1473)</td></tr><tr><td>hydro_zone</td><td>categorical</td><td>object</td>
+<td>0.0%</td><td>4</td>
+<td class="muted">top: Saurashtra Hard-Rock Basalt(9844), South &amp; Central Gujarat Plain(9401), North Gujarat Alluvium(2346)</td></tr><tr><td>latitude</td><td>numeric</td><td>float64</td>
+<td>0.0%</td><td>1409</td>
+<td class="muted">μ=22.1, σ=1,
+[20.2, 24.7], outliers=0
+</td></tr><tr><td>longitude</td><td>numeric</td><td>float64</td>
+<td>0.0%</td><td>1433</td>
+<td class="muted">μ=72, σ=1.47,
+[68.5, 74.4], outliers=0
+</td></tr><tr><td>year</td><td>numeric</td><td>int64</td>
+<td>0.0%</td><td>31</td>
+<td class="muted">μ=2.01e+03, σ=8.53,
+[1.99e+03, 2.02e+03], outliers=0
+</td></tr><tr><td>depth_may</td><td>numeric</td><td>float64</td>
+<td>0.0%</td><td>1383</td>
+<td class="muted">μ=11.4, σ=7.98,
+[0, 196], outliers=442
+</td></tr><tr><td>depth_nov</td><td>numeric</td><td>float64</td>
+<td>0.0%</td><td>1303</td>
+<td class="muted">μ=7.1, σ=7.34,
+[0.05, 191], outliers=985
+</td></tr><tr><td>recharge_delta</td><td>numeric</td><td>float64</td>
+<td>0.0%</td><td>2289</td>
+<td class="muted">μ=4.34, σ=4.17,
+[-73.4, 39.8], outliers=1096
+</td></tr><tr><td>recharge_gap_flag</td><td>numeric</td><td>int64</td>
+<td>0.0%</td><td>2</td>
+<td class="muted">μ=0.018, σ=0.133,
+[0, 1], outliers=410
+</td></tr><tr><td>relative_recovery_ratio</td><td>numeric</td><td>float64</td>
+<td>0.0%</td><td>11768</td>
+<td class="muted">μ=0.392, σ=0.277,
+[-12.7, 0.995], outliers=40
+</td></tr><tr><td>depth_jan_next</td><td>numeric</td><td>float64</td>
+<td>96.6%</td><td>389</td>
+<td class="muted">μ=12.7, σ=20.2,
+[0.35, 199], outliers=24
+</td></tr><tr><td>rabi_drawdown</td><td>numeric</td><td>float64</td>
+<td>96.6%</td><td>418</td>
+<td class="muted">μ=1.18, σ=3.63,
+[-66.3, 16.1], outliers=78
+</td></tr><tr><td>depth_may_next</td><td>numeric</td><td>float64</td>
+<td>5.4%</td><td>1357</td>
+<td class="muted">μ=11.3, σ=7.45,
+[0, 197], outliers=415
+</td></tr><tr><td>stress_alarm_next</td><td>numeric</td><td>float64</td>
+<td>5.4%</td><td>2</td>
+<td class="muted">μ=0.248, σ=0.432,
+[0, 1], outliers=5357
+</td></tr></table></div>
+
+<h2>Strongest correlations</h2>
+<div class="card"><table><tr><th>A</th><th>B</th><th>|corr|</th></tr>
+<tr><td>depth_nov</td><td>depth_jan_next</td><td>0.9837</td></tr><tr><td>depth_may</td><td>depth_jan_next</td><td>0.9832</td></tr><tr><td>depth_jan_next</td><td>depth_may_next</td><td>0.9446</td></tr><tr><td>depth_may</td><td>depth_may_next</td><td>0.9212</td></tr></table></div>
+<h2>Data quality issues</h2>
+<div class="card"><table><tr><th>Severity</th><th>Column</th><th>Issue</th></tr>
+<tr><td class="fail">high</td>
+<td>depth_jan_next</td><td>96.6% missing.</td></tr><tr><td class="fail">high</td>
+<td>rabi_drawdown</td><td>96.6% missing.</td></tr></table>
+</div>
+
+<h2>Plan</h2>
+<div class="card"><p>Task: <strong>exploratory_analysis</strong> — No --target supplied; mission is analysis-only.</p>
+<p>Split: <code>none</code> — Analysis-only mission; no model split required.</p>
+<p>Candidate algorithms: —</p>
+<p class="muted">Unconstrained budget; all candidate algorithms considered.</p>
+<p><strong>Hypotheses:</strong></p><ul><li>&#39;depth_nov&#39; and &#39;depth_jan_next&#39; move together (|corr|=0.9837); consider redundancy or a shared driver.</li><li>&#39;depth_may&#39; and &#39;depth_jan_next&#39; move together (|corr|=0.9832); consider redundancy or a shared driver.</li><li>&#39;depth_jan_next&#39; and &#39;depth_may_next&#39; move together (|corr|=0.9446); consider redundancy or a shared driver.</li><li>Surface the dominant segments and the variables that separate them.</li></ul></div>
+
+<h2>Goal-specific analysis</h2>
+<div class="card"><p><strong>group_comparison</strong> — answered
+· All 22,820 working rows</p><ul><li>district=Rajkot: mean recharge_delta=8.25.</li><li>district=Junagadh: mean recharge_delta=7.44.</li><li>district=Aravalli: mean recharge_delta=6.51.</li><li>district=Porbandar: mean recharge_delta=5.93.</li><li>district=Amreli: mean recharge_delta=5.81.</li></ul>
+<p class="muted">Measured values and calculation details: <code>goal_analysis.json</code>.</p></div>
+
+<h2>Validation</h2>
+<div class="card"><p>Verdict <span class="pass">PASS</span>,
+max safe deployment level 1.</p>
+<table><tr><th>Check</th><th>Status</th><th>Detail</th></tr>
+<tr><td>data_sufficiency</td><td class="pass">pass</td><td class="muted">EDA needs only a modest sample.</td></tr></table></div>
+
+<p class="muted">Reproduce with <code>analysis.py</code> / <code>analysis.ipynb</code>; see <code>lineage.json</code> and <code>environment.lock</code>.</p>
+</div></body></html>

@@ -1,0 +1,50 @@
+mission:
+  id: 53efc8a5c238
+  goal: how does recharge_delta vary by district
+  kind: analyze
+sampling:
+  sampled: false
+  reason: 22,820 rows fits the live full-analysis lane; the full dataset is used so
+    no information is discarded.
+  n_input_rows: 22820
+  n_working_rows: 22820
+  strategy: none
+  stratify_by: null
+transformations:
+- op: strip_whitespace
+  columns:
+  - station_code
+  - station_name
+  - district
+  - hydro_zone
+- &id001
+  op: flag_high_missingness
+  columns:
+  - depth_jan_next
+  - rabi_drawdown
+  applied: false
+  note: Imputation deferred to a human decision; see assumptions.yaml.
+task_choice:
+  task: exploratory_analysis
+  reason: No --target supplied; mission is analysis-only.
+split:
+  strategy: none
+  reason: Analysis-only mission; no model split required.
+human_approval_gates:
+- Confirm the target and metric match the intended decision.
+- Decide an imputation policy for high-missingness columns.
+refuse_if:
+- Target leakage is detected and unresolved.
+- Data is insufficient for a stable estimate of the chosen metric.
+- A requested deployment latency cannot be met by any candidate.
+data_quality_issues:
+- severity: high
+  column: depth_jan_next
+  kind: high_missingness
+  detail: 96.6% missing.
+- severity: high
+  column: rabi_drawdown
+  kind: high_missingness
+  detail: 96.6% missing.
+deferred_decisions:
+- *id001

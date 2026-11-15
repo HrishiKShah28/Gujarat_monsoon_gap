@@ -1,0 +1,126 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Technical report — how does depth vary by hydro_zone</title>
+<style>
+body{font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;color:#1b1f24;background:#f6f8fa}
+.wrap{max-width:960px;margin:0 auto;padding:32px}
+h1{font-size:28px;margin:0 0 4px} h2{font-size:20px;margin:28px 0 8px;border-bottom:1px solid #e1e4e8;padding-bottom:6px}
+.sub{color:#57606a;margin:0 0 20px}
+.card{background:#fff;border:1px solid #e1e4e8;border-radius:8px;padding:16px 20px;margin:14px 0}
+table{border-collapse:collapse;width:100%;font-size:14px} th,td{text-align:left;padding:7px 10px;border-bottom:1px solid #eaecef}
+th{background:#f6f8fa} .kpi{display:inline-block;min-width:150px;margin:6px 18px 6px 0}
+.kpi .v{font-size:22px;font-weight:600} .kpi .l{color:#57606a;font-size:12px;text-transform:uppercase;letter-spacing:.04em}
+.pass{color:#1a7f37;font-weight:600}.warn{color:#9a6700;font-weight:600}.fail{color:#cf222e;font-weight:600}
+.badge{display:inline-block;padding:2px 8px;border-radius:12px;font-size:12px;background:#ddf4ff;color:#0969da}
+.muted{color:#57606a;font-size:13px} code{background:#eff1f3;padding:1px 5px;border-radius:4px}
+</style></head><body><div class="wrap">
+<h1>Technical report</h1>
+<p class="sub">how does depth vary by hydro_zone · mission <code>7592c253cbb5</code></p>
+
+<h2>Dataset</h2>
+<div class="card"><p><code>data\processed\gujarat_groundwater_analytical.csv</code> — 52919 rows × 25 cols
+(csv). Quality score <strong>84/100</strong>.
+SHA-256 <span class="muted">ee99aac3f2889600…</span></p></div>
+
+<h2>Schema &amp; distributions</h2>
+<div class="card"><table><tr><th>Column</th><th>Role</th><th>Dtype</th><th>Missing</th><th>Unique</th><th>Summary</th></tr>
+<tr><td>slno</td><td>numeric</td><td>int64</td>
+<td>0.0%</td><td>46302</td>
+<td class="muted">μ=2.07e+04, σ=1.42e+04,
+[1, 4.64e+04], outliers=0
+</td></tr><tr><td>station_name</td><td>categorical</td><td>object</td>
+<td>0.0%</td><td>2040</td>
+<td class="muted">top: SK-035(83), SK-059(82), SK-025A(80)</td></tr><tr><td>agency</td><td>categorical</td><td>object</td>
+<td>0.0%</td><td>2</td>
+<td class="muted">top: Gujarat SW GW(46300), CGWB(6619)</td></tr><tr><td>state_lgd_code</td><td>constant</td><td>int64</td>
+<td>0.0%</td><td>1</td>
+<td class="muted"></td></tr><tr><td>state</td><td>constant</td><td>object</td>
+<td>0.0%</td><td>1</td>
+<td class="muted"></td></tr><tr><td>district_lgd_code</td><td>numeric</td><td>int64</td>
+<td>0.0%</td><td>33</td>
+<td class="muted">μ=481, σ=75.9,
+[438, 676], outliers=7477
+</td></tr><tr><td>district</td><td>categorical</td><td>object</td>
+<td>0.0%</td><td>34</td>
+<td class="muted">top: Junagadh(5703), Amreli(3535), Jamnagar(3288)</td></tr><tr><td>tehsil</td><td>categorical</td><td>object</td>
+<td>0.0%</td><td>264</td>
+<td class="muted">top: UNA(757), UMBERGAON(703), DANTA(687)</td></tr><tr><td>block</td><td>categorical</td><td>object</td>
+<td>0.0%</td><td>213</td>
+<td class="muted">top: -(46497), The dangs(182), PORBANDAR(171)</td></tr><tr><td>village</td><td>categorical</td><td>object</td>
+<td>0.0%</td><td>898</td>
+<td class="muted">top: -(46497), Godhra(30), Virpur(28)</td></tr><tr><td>river</td><td>constant</td><td>object</td>
+<td>0.0%</td><td>1</td>
+<td class="muted"></td></tr><tr><td>basin</td><td>constant</td><td>object</td>
+<td>0.0%</td><td>1</td>
+<td class="muted"></td></tr><tr><td>tributary</td><td>constant</td><td>object</td>
+<td>0.0%</td><td>1</td>
+<td class="muted"></td></tr><tr><td>subtributary</td><td>constant</td><td>object</td>
+<td>0.0%</td><td>1</td>
+<td class="muted"></td></tr><tr><td>subsubtributary</td><td>constant</td><td>object</td>
+<td>0.0%</td><td>1</td>
+<td class="muted"></td></tr><tr><td>local_river</td><td>constant</td><td>object</td>
+<td>0.0%</td><td>1</td>
+<td class="muted"></td></tr><tr><td>latitude</td><td>numeric</td><td>float64</td>
+<td>0.0%</td><td>1706</td>
+<td class="muted">μ=22.2, σ=1.03,
+[20.2, 24.7], outliers=0
+</td></tr><tr><td>longitude</td><td>numeric</td><td>float64</td>
+<td>0.0%</td><td>1721</td>
+<td class="muted">μ=72, σ=1.45,
+[68.5, 74.4], outliers=0
+</td></tr><tr><td>data_collection_date</td><td>datetime</td><td>object</td>
+<td>0.0%</td><td>120</td>
+<td class="muted"></td></tr><tr><td>depth</td><td>numeric</td><td>float64</td>
+<td>0.0%</td><td>2800</td>
+<td class="muted">μ=9.66, σ=11,
+[0, 199], outliers=1525
+</td></tr><tr><td>year</td><td>numeric</td><td>int64</td>
+<td>0.0%</td><td>32</td>
+<td class="muted">μ=2.01e+03, σ=9.25,
+[1.99e+03, 2.02e+03], outliers=0
+</td></tr><tr><td>month</td><td>numeric</td><td>int64</td>
+<td>0.0%</td><td>8</td>
+<td class="muted">μ=7.27, σ=2.79,
+[1, 11], outliers=0
+</td></tr><tr><td>hydro_zone</td><td>categorical</td><td>object</td>
+<td>0.0%</td><td>4</td>
+<td class="muted">top: Saurashtra Hard-Rock Basalt(21902), South &amp; Central Gujarat Plain(21689), North Gujarat Alluvium(6471)</td></tr><tr><td>season</td><td>categorical</td><td>object</td>
+<td>0.0%</td><td>4</td>
+<td class="muted">top: Post-Monsoon Kharif (November)(24261), Pre-Monsoon Summer (May)(23719), Post-Monsoon Rabi (January)(2523)</td></tr><tr><td>station_code</td><td>categorical</td><td>object</td>
+<td>0.0%</td><td>2046</td>
+<td class="muted">top: SABARKANTHA_SK-035(83), SABARKANTHA_SK-059(82), SABARKANTHA_SK-025A(80)</td></tr></table></div>
+
+<h2>Strongest correlations</h2>
+<div class="card"><table><tr><th>A</th><th>B</th><th>|corr|</th></tr>
+<tr><td>slno</td><td>latitude</td><td>0.2914</td></tr><tr><td>slno</td><td>district_lgd_code</td><td>0.2422</td></tr><tr><td>slno</td><td>year</td><td>0.2294</td></tr><tr><td>depth</td><td>month</td><td>0.183</td></tr><tr><td>latitude</td><td>depth</td><td>0.1704</td></tr><tr><td>slno</td><td>longitude</td><td>0.1497</td></tr><tr><td>district_lgd_code</td><td>latitude</td><td>0.1175</td></tr><tr><td>slno</td><td>depth</td><td>0.1122</td></tr><tr><td>year</td><td>month</td><td>0.1009</td></tr><tr><td>district_lgd_code</td><td>year</td><td>0.0856</td></tr><tr><td>district_lgd_code</td><td>longitude</td><td>0.0842</td></tr><tr><td>latitude</td><td>longitude</td><td>0.0839</td></tr><tr><td>longitude</td><td>depth</td><td>0.0809</td></tr><tr><td>latitude</td><td>year</td><td>0.0712</td></tr><tr><td>slno</td><td>month</td><td>0.0666</td></tr></table></div>
+<h2>Data quality issues</h2>
+<div class="card"><table><tr><th>Severity</th><th>Column</th><th>Issue</th></tr>
+<tr><td class="muted">low</td>
+<td>state_lgd_code</td><td>Column has a single value; no predictive content.</td></tr><tr><td class="muted">low</td>
+<td>state</td><td>Column has a single value; no predictive content.</td></tr><tr><td class="muted">low</td>
+<td>river</td><td>Column has a single value; no predictive content.</td></tr><tr><td class="muted">low</td>
+<td>basin</td><td>Column has a single value; no predictive content.</td></tr><tr><td class="muted">low</td>
+<td>tributary</td><td>Column has a single value; no predictive content.</td></tr><tr><td class="muted">low</td>
+<td>subtributary</td><td>Column has a single value; no predictive content.</td></tr><tr><td class="muted">low</td>
+<td>subsubtributary</td><td>Column has a single value; no predictive content.</td></tr><tr><td class="muted">low</td>
+<td>local_river</td><td>Column has a single value; no predictive content.</td></tr></table>
+</div>
+
+<h2>Plan</h2>
+<div class="card"><p>Task: <strong>exploratory_analysis</strong> — No --target supplied; mission is analysis-only.</p>
+<p>Split: <code>none</code> — Analysis-only mission; no model split required.</p>
+<p>Candidate algorithms: —</p>
+<p class="muted">Unconstrained budget; all candidate algorithms considered.</p>
+<p><strong>Hypotheses:</strong></p><ul><li>Surface the dominant segments and the variables that separate them.</li></ul></div>
+
+<h2>Goal-specific analysis</h2>
+<div class="card"><p><strong>group_comparison</strong> — answered
+· All 52,919 working rows</p><ul><li>hydro_zone=North Gujarat Alluvium: mean depth=15.6.</li><li>hydro_zone=Saurashtra Hard-Rock Basalt: mean depth=10.</li><li>hydro_zone=Kachchh Arid Sedimentary: mean depth=9.98.</li><li>hydro_zone=South &amp; Central Gujarat Plain: mean depth=7.49.</li></ul>
+<p class="muted">Measured values and calculation details: <code>goal_analysis.json</code>.</p></div>
+
+<h2>Validation</h2>
+<div class="card"><p>Verdict <span class="pass">PASS</span>,
+max safe deployment level 1.</p>
+<table><tr><th>Check</th><th>Status</th><th>Detail</th></tr>
+<tr><td>data_sufficiency</td><td class="pass">pass</td><td class="muted">EDA needs only a modest sample.</td></tr></table></div>
+
+<p class="muted">Reproduce with <code>analysis.py</code> / <code>analysis.ipynb</code>; see <code>lineage.json</code> and <code>environment.lock</code>.</p>
+</div></body></html>

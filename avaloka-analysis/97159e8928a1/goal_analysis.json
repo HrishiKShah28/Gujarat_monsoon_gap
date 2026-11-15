@@ -1,0 +1,64 @@
+{
+  "goal": "how does recharge_delta vary by district",
+  "kind": "group_comparison",
+  "status": "answered",
+  "scope": "All 22,820 working rows",
+  "columns": [
+    "district",
+    "recharge_delta"
+  ],
+  "metrics": {
+    "group_column": "district",
+    "value_column": "recharge_delta",
+    "aggregation": "mean",
+    "groups": [
+      {
+        "group": "Rajkot",
+        "value": 8.25016
+      },
+      {
+        "group": "Junagadh",
+        "value": 7.441879
+      },
+      {
+        "group": "Aravalli",
+        "value": 6.510443
+      },
+      {
+        "group": "Porbandar",
+        "value": 5.934474
+      },
+      {
+        "group": "Amreli",
+        "value": 5.814394
+      },
+      {
+        "group": "Sabarkantha",
+        "value": 5.764842
+      },
+      {
+        "group": "Bhavnagar",
+        "value": 5.450149
+      },
+      {
+        "group": "Jamnagar",
+        "value": 5.378642
+      },
+      {
+        "group": "Daman",
+        "value": 4.956667
+      },
+      {
+        "group": "Devbhumi Dwarka",
+        "value": 4.881335
+      }
+    ]
+  },
+  "findings": [
+    "district=Rajkot: mean recharge_delta=8.25.",
+    "district=Junagadh: mean recharge_delta=7.44.",
+    "district=Aravalli: mean recharge_delta=6.51.",
+    "district=Porbandar: mean recharge_delta=5.93.",
+    "district=Amreli: mean recharge_delta=5.81."
+  ]
+}
